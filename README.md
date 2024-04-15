@@ -1,5 +1,7 @@
 # ProvaTecnica -- Repositório de Prova Tecnica
 
+Neste Read-me há duas seções: 'Proposta' (da prova técnica) e 'Implementação, uso e Teste' (breve descrição do trabalho realizado) 
+
 PROPOSTA:
 ---------------------------------------------------------------------------------------------------------
 
@@ -93,6 +95,35 @@ ESTORNO - Response:{
 IMPLEMENTAÇÃO, USO E TESTE:
 ---------------------------------------------------------------------------------------------------------
 
+Esta aplicação backend foi implementada com springboot security, swagger e banco de dados h2.
+
+Utilizamos para resolução um modelo um-pra-muitos conta-transação.
+O conceito de conta foi igualado com o de cartão e o sistema permite transações até o saldo alcançar o limite.
+A partir do momento em que se alcança o limite, todas as operações são negadas até acontecer um crédito (pagamento de fatura).
+Compras parceladas produzem um bloqueio de limite e sua fração mensal é somada ao saldo da fatura.
+
+As credenciais da aplicação estão hardcoded e são as seguintes: (admin/12345) e (user/123) e seus usos não =foram diferenciados um do outro (!).
+
+Descrição dos serviços implementados:
+
+Admin (Serviço de segurança da aplicação)
+- ​/seguranca​/autenticar : Neste serviço é gerado, após autenticação, um Bearer token para uso dos serviços abaixo
+
+Conta (serviços de gestão de contas disponíveis para transações nos cartões)
+​- /conta​/consultar​/{id} : consulta à um cartão específico
+​- /conta​/creditar​/{id} : serviço para receber pagamentos de fatura do cartão
+​- /conta​/debitar​/{id} : serviço para receber gastos no cartão
+​- /conta​/listar : listagem das contas dos cartões
+- ​/conta​/salvar : criação de conta de cartão, com imposição de limite de conta
+
+Transacao (serviço público para registro de transações com os cartões)
+​- /transacao​/consultar​/{id} : consulta à transação unitária
+​- /transacao​/estornar​/{id} :  registro de estorno de transação (recupera saldo de conta de cartão)
+​- /transacao​/listar : consulta à listagem de transações
+​- /transacao​/pagar : registro de pagamento (checa saldo de conta de cartão)
+
+Para testar a aplicação e observar os dados em tempo real no banco de dados local, basta rodar a aplicação, entrar nos links abaixo, se autenticar e disparar pelo swagger as requisições de teste.
+
 Interface Web do Swagger
   http://localhost:9090/swagger-ui/
   Serviçoes disponívei
@@ -106,3 +137,4 @@ Interface banco H2:
     SELECT * FROM BANCO_CONTA ;
     SELECT * FROM BANCO_TRANSACAO ;
 
+OBS: não foram implementados nesta solução testes unitários nem fim-a-fim com Junit e Mockito.
