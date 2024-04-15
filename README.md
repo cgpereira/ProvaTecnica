@@ -1,4 +1,5 @@
-# ProvaTecnica -- Repositório de Prova Tecnica
+# ProvaTecnica
+Repositório de Prova Tecnica de Backend
 
 Neste Read-me há duas seções: 'Proposta' (da prova técnica) e 'Implementação, uso e Teste' (breve descrição do trabalho realizado) 
 
