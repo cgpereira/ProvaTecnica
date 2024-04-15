@@ -106,7 +106,7 @@ O conceito de conta foi igualado com o de cartão e o sistema permite transaçõ
 A partir do momento em que se alcança o limite, todas as operações são negadas até acontecer um crédito (pagamento de fatura).
 Compras parceladas produzem um bloqueio de limite e sua fração mensal é somada ao saldo da fatura.
 
-As credenciais da aplicação estão hardcoded e são as seguintes: (admin/12345) e (user/123) e seus usos não =foram diferenciados um do outro (!).
+As credenciais de autenticação da aplicação são configuráveis no application.properties: (admin/12345) e (user/123) e seus usos não foram diferenciados um do outro (!).
 
 Descrição dos serviços implementados:
 
