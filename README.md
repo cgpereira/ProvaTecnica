@@ -1,9 +1,12 @@
 # ProvaTecnica
-Repositório de Prova Tecnica de Backend
+   Repositório de Prova Tecnica de Backend
+   Aplicação de controle de transações bancárias
 
-Neste Read-me há duas seções: 'Proposta' (da prova técnica) e 'Implementação, uso e Teste' (breve descrição do trabalho realizado) 
+Neste Read-me há duas seções:
+   - 'Proposta' (da prova técnica)
+   - 'Implementação, uso e Teste' (breve descrição do trabalho realizado) 
 
-PROPOSTA:
+'PROPOSTA:'
 ---------------------------------------------------------------------------------------------------------
 
 Tools Java Challenge [C]
@@ -93,7 +96,7 @@ ESTORNO - Response:{
 	}
 }
 
-IMPLEMENTAÇÃO, USO E TESTE:
+'IMPLEMENTAÇÃO, USO E TESTE:'
 ---------------------------------------------------------------------------------------------------------
 
 Esta aplicação backend foi implementada com springboot security, swagger e banco de dados h2.
